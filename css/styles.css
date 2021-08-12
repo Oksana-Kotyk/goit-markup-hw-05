@@ -82,10 +82,13 @@ img {
 .logo-text {
   color: var(--primary-black-color);
   cursor: pointer;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: color;
 }
 .logo-text:hover,
 .logo-text:focus {
   color: var(--accent-color);
+  
 }
 /* ссилки на страници сайта и контакты */
 .list {
@@ -105,6 +108,8 @@ img {
   cursor: pointer;
   padding-top: 32px;
   padding-bottom: 32px;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: color;
 }
 
 .list-item:hover,
@@ -113,13 +118,30 @@ img {
 }
 .list-item.current {
   color: var(--accent-color);
+  position: relative;
+  display: block;
 }
 
 .list-box {
   margin-right: 30px;
+
 }
 .list-box:last-child {
   margin-right: 0;
+ 
+
+}
+.list-item.current::after{
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-color);
+  left: 0;
+  bottom: 0;
+  border-radius: 2px;
+
 }
 .link {
   display: flex;
@@ -134,10 +156,14 @@ img {
   cursor: pointer;
   padding-top: 32px;
   padding-bottom: 32px;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: color;
 }
 .cont-icon {
   margin-right: 10px;
   fill: var(--primary-text-color);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: fill;
 }
 .link:hover .cont-icon,
 .link:focus .cont-icon {
@@ -201,6 +227,8 @@ img {
   cursor: pointer;
   border: none;
   border-radius: 4px;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: background-color;
 }
 .btn:hover,
 .btn:focus {
@@ -274,6 +302,7 @@ img {
 .list-img {
   margin-right: 30px;
   width: 370px;
+  position: relative;
 }
 .list-img:last-child {
   margin-right: 0;
@@ -285,6 +314,29 @@ img {
   line-height: 42px;
   letter-spacing: 0.03em;
   text-align: center;
+}
+.product{
+  display: block;
+  position: absolute;
+  background: rgba(47, 48, 58, 0.8);
+  width: 370px;
+height: 70px;
+bottom: 0;
+display: flex;
+  align-items: center ;
+  justify-content: center;
+}
+.name-of-product{
+  display: block;
+  font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 16px;
+text-align: center;
+letter-spacing: 0.03em;
+text-transform: uppercase;
+color: var(--primary-white-color)
 }
 
 /* Секция наша команда */
@@ -347,6 +399,8 @@ img {
   justify-content: center;
   align-items: center;
   fill: #afb1b8;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: background-color,fill;
 }
 .icon-list {
   margin-right: 10px;
@@ -371,6 +425,9 @@ img {
   align-items: center;
   border: 1px solid #afb1b8;
   background-color: var(--primary-white-color);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: fill;
+}
 }
 
 .item-logo:last-child {
@@ -378,6 +435,8 @@ img {
 }
 .logo-icon {
   fill: #afb1b8;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: fill;
 }
 .logo-icon:focus,
 .logo-icon:hover {
@@ -416,6 +475,8 @@ img {
 .logo-text-down {
   color: var(--primary-white-color);
   cursor: pointer;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: color;
 }
 .adress {
   color: var(--primary-white-color);
@@ -446,6 +507,9 @@ img {
   line-height: 24px;
   letter-spacing: 0.03em;
   cursor: pointer;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: color;
+
 }
 .link-item:hover,
 .link-item:focus {
@@ -497,6 +561,8 @@ img {
   padding: 6px 22px;
   border: none;
   border-radius: 4px;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: color, background-color,box-shadow ;
 }
 .current-btn {
   color: var(--primary-white-color);
@@ -511,6 +577,8 @@ img {
 }
 .portfolio-li-item {
   margin: 15px;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: box-shadow ;
 }
 .portfolio-li-item:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
@@ -520,6 +588,7 @@ img {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
+
 .list-portfolio {
   display: flex;
   flex-wrap: wrap;
@@ -528,11 +597,43 @@ img {
 .link-portfolio {
   text-decoration: none;
   display: block;
+
 }
 .link-portfolio:focus {
   text-decoration: none;
 }
+.overlay{
+  position: relative;
+  overflow: hidden;
+}
+.text-overlay{
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0.03em;
+  color: var(--primary-white-color);
+  padding: 63px 24px;
+  background: rgba(33, 150, 243, 0.9);
+  transform: translateY(100%);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: opacity, transform;
+  opacity: 0;
+ 
+}
 
+.portfolio-li-item:hover .text-overlay{
+  opacity: 1;
+  transform: translateY(0);
+  
+}
 .portfolio-text {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -560,4 +661,44 @@ img {
   font-weight: normal;
   font-size: 16px;
   color: var(--primary-text-color);
+}
+
+
+/* Модальное окно */
+.backdrop{
+  position: fixed;
+  top: 0;
+  left: 0;
+  
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+}
+
+.backdrop.is-hidden{
+  opacity: 0;
+  pointer-events: none;
+  visibility: inherit;
+}
+.modal{
+  position: absolute;
+  min-width: 528px;
+  min-height: 581px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+
+}
+.close {
+  display: block;
+  cursor: pointer;
+  margin-right: 8px;
+ margin-left: auto;
+ margin-top: 8px;
+ border-radius: 30px;
+ border:1px solid rgba(0, 0, 0, 0.1);
+ 
 }
